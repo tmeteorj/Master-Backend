@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Master-Backend">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../Master-Backend/out/artifacts/Master_Backend_jar/Master-Backend.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

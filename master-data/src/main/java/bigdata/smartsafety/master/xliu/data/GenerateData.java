@@ -56,7 +56,7 @@ public class GenerateData {
                 Plane pl = new Plane(year, month, 117.172762, 39.111031);
                 pl.setPolygon(list);
                 pl.setAttr(makeAttr(randomType()));
-                String sql = String.format("insert into plane(plane_id,year,month,lng,lat,polygon,attr) values(%d,%s)", pid, pl.toInsertSQLString());
+                String sql = String.format("insert into bd_plane(plane_id,year,month,lng,lat,polygon,attr) values(%d,%s)", pid, pl.toInsertSQLString());
                 MySQLUtil.updateResult("plane", sql);
             }
         }
@@ -73,7 +73,7 @@ public class GenerateData {
 
 
     public static void genOne(double sx,double sy,int pid) throws SQLException {
-        List<Point> org=new ArrayList<>();
+        List<Point> org=new ArrayList<Point>();
         org.add(new Point(sx,sy));
         for(int i=0;i<20;i++){
             sx+=Math.random()/500.0-0.001;
@@ -94,7 +94,7 @@ public class GenerateData {
                 Plane pl = new Plane(year, month, sx,sy);
                 pl.setPolygon(org);
                 pl.setAttr(makeAttr(randomType()));
-                String sql = String.format("insert into plane(plane_id,year,month,lng,lat,polygon,attr) values(%d,%s)", pid, pl.toInsertSQLString());
+                String sql = String.format("insert into bd_plane(plane_id,year,month,lng,lat,polygon,attr) values(%d,%s)", pid, pl.toInsertSQLString());
                 MySQLUtil.updateResult("plane", sql);
             }
         }
@@ -114,6 +114,6 @@ public class GenerateData {
     }
 
     public static void main(String args[]) throws SQLException {
-        genAll(117.10,39.00,117.35,39.30,101,1000);
+        genAll(117.10,39.00,117.35,39.30,1,500);
     }
 }
