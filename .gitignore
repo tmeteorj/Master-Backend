@@ -1,5 +1,5 @@
 # ignore IDEA related files
-/.idea/
+.idea/
 *.iml
 
 # ignore files in folder 'target'
